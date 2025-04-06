@@ -23,7 +23,7 @@ const services: Service[] = [
   {
     id: 1,
     title: "Audit",
-    image: "/services/audit.png",
+    image: "/audit.png",
     description: `✅ Moliya va buxgalteriya hisobotlarini to‘liq tekshirish
 ✅ Soliq va huquqiy xatolarni aniqlash
 ✅ Moliyaviy faoliyat tahlili va tavsiyalar
@@ -33,7 +33,7 @@ const services: Service[] = [
   {
     id: 2,
     title: "Buxgalteriya hisobini yuritish",
-    image: "/services/buxgalter.png",
+    image: "/buxgalter.png",
     description: `✅ Buxgalteriya hisobotlarini yuritish
 ✅ Moliyaviy hisobotlarni tayyorlash
 ✅ Soliq hisobotlarini taqdim etish
@@ -86,7 +86,7 @@ const services: Service[] = [
   {
     id: 3,
     title: "Kadrlar hisobi",
-    image: "/services/kadr.png",
+    image: "/kadr.png",
     description: `✅ Kadrlar bo'yicha hujjatlarni yuritish
 ✅ Ishchilarni ro'yxatga olish va hisobini yuritish
 ✅ Mehnat qonunchiligiga rioya qilish`,
@@ -94,7 +94,7 @@ const services: Service[] = [
   {
     id: 4,
     title: "Soliq maslahati",
-    image: "/services/soliq.png",
+    image: "/soliq.png",
     description: `✅ Soliq qonunchiligiga rioya qilish bo'yicha maslahat
 ✅ Soliq hisobotlarini tayyorlash va taqdim etish
 ✅ Soliq yukini optimallashtirish`,
@@ -102,7 +102,7 @@ const services: Service[] = [
   {
     id: 5,
     title: "Deklarant",
-    image: "/services/deklarant.png",
+    image: "/deklarant.png",
     description: `✅ Tashqi savdo operatsiyalarini hujjatlashtirish
 ✅ Bojxona deklaratsiyalarini tayyorlash
 ✅ Bojxona qonunchiligiga rioya qilish`,
@@ -110,7 +110,7 @@ const services: Service[] = [
   {
     id: 6,
     title: "Boshqalar",
-    image: "/services/boshqalar.png",
+    image: "/boshqalar.png",
     description: `✅ Boshqa xizmatlar bo'yicha batafsil ma'lumot uchun biz bilan bog'laning.`,
   },
 ];

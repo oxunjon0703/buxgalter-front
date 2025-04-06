@@ -32,7 +32,7 @@ const teamMembers = [
     id: 3,
     name: "Xasanov Sherali Xatamovich",
     role: "Auditor",
-    image: "/image/Sherali1.jpg",
+    image: "/image/Sherali.jpg",
     experience: "14 yillik stajga ega bosh buxgalter",
     specialization: "Xalqaro darajadagi buxgalter (ACCA DipIFR, CAP)",
   },
