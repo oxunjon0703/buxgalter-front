@@ -102,7 +102,7 @@ const services: Service[] = [
   {
     id: 5,
     title: "Deklarant",
-    image: "/deklarant.png",
+    image: "/Deklarant.png",
     description: `✅ Tashqi savdo operatsiyalarini hujjatlashtirish
 ✅ Bojxona deklaratsiyalarini tayyorlash
 ✅ Bojxona qonunchiligiga rioya qilish`,

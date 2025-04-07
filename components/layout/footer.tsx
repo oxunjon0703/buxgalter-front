@@ -38,7 +38,7 @@ const Footer = () => {
                   href="/service"
                   className="hover:text-blue-200 transition-colors"
                 >
-                  Xizmatler
+                  Xizmatlar
                 </Link>
               </li>
               <li>

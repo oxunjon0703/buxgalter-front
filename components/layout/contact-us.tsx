@@ -71,7 +71,7 @@ const ContactUs = () => {
             transition={{ duration: 0.7, delay: 0.3 }} // Animatsiya davomiyligi va kechikish
           >
             <form className="flex flex-col gap-4">
-              {["Ism", "Familiya", "Xabaringiz"].map((label, index) => (
+              {["Ism", "Telefon raqam", "Xabaringiz"].map((label, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: 100 }} // Har bir element o'ngdan chiqadi
@@ -85,8 +85,16 @@ const ContactUs = () => {
                     <textarea
                       placeholder={`${label}ni yozing`}
                       className="p-3 border border-gray-300 rounded-lg w-full h-32 bg-[#002F6C] text-white placeholder-white"
-                      required
                     ></textarea>
+                  ) : label === "Telefon raqam" ? (
+                    <input
+                      type="int" // Telefon raqam uchun input turi
+                      placeholder="+998 90 123 45 67"
+                      className="p-3 border border-gray-300 rounded-lg w-full bg-[#002F6C] text-white placeholder-white"
+                      pattern="[0-9+ ]*" // Telefon raqam formatini tekshirish uchun
+                      inputMode="numeric" // Mobil qurilmalarda raqamli klaviaturani ko'rsatish uchun
+                      required
+                    />
                   ) : (
                     <input
                       type="text"
