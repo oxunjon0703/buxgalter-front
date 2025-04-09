@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion"; // Framer Motion import
 import { useInView } from "react-intersection-observer"; // Intersection Observer import
 
@@ -9,6 +9,30 @@ const ContactUs = () => {
     triggerOnce: false, // Animatsiya faqat bir marta ishlaydi
     threshold: 0.15, // Bo'limning 20% qismi ko'rinsa animatsiya boshlanadi
   });
+
+  const [phoneError, setPhoneError] = useState(""); // Telefon raqam uchun xato holati
+  const [phone, setPhone] = useState(""); // Telefon raqamni kuzatish uchun holat
+  const [successMessage, setSuccessMessage] = useState(false); // Muvaffaqiyat xabari uchun holat
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault(); // Formani yuborishni to'xtatish
+
+    // Telefon raqamni validatsiya qilish
+    const phoneRegex = /^\+998\d{2}\d{3}\d{2}\d{2}$/; // Telefon raqam formati
+    if (!phoneRegex.test(phone)) {
+      setPhoneError("Telefon maydoni to'liq emas yoki nomer formati xato");
+      return;
+    }
+
+    // Agar hammasi to'g'ri bo'lsa, xatoni tozalash va muvaffaqiyat xabarini ko'rsatish
+    setPhoneError("");
+    setSuccessMessage(true);
+
+    // Xabarni 5 soniyadan keyin yashirish
+    setTimeout(() => {
+      setSuccessMessage(false);
+    }, 5000);
+  };
 
   return (
     <section id="contact" className="py-16 bg-gray-50">
@@ -70,7 +94,7 @@ const ContactUs = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}} // Animatsiya faqat ko'rinsa ishlaydi
             transition={{ duration: 0.7, delay: 0.3 }} // Animatsiya davomiyligi va kechikish
           >
-            <form className="flex flex-col gap-4">
+            <form className="flex flex-col gap-4" onSubmit={handleFormSubmit}>
               {["Ism", "Telefon raqam", "Xabaringiz"].map((label, index) => (
                 <motion.div
                   key={index}
@@ -83,18 +107,27 @@ const ContactUs = () => {
                   </label>
                   {label === "Xabaringiz" ? (
                     <textarea
-                      placeholder={`${label}ni yozing`}
+                      placeholder={`${label}ni yozing *(ixtiyoriy)`}
                       className="p-3 border border-gray-300 rounded-lg w-full h-32 bg-[#002F6C] text-white placeholder-white"
                     ></textarea>
                   ) : label === "Telefon raqam" ? (
-                    <input
-                      type="int" // Telefon raqam uchun input turi
-                      placeholder="+998 90 123 45 67"
-                      className="p-3 border border-gray-300 rounded-lg w-full bg-[#002F6C] text-white placeholder-white"
-                      pattern="[0-9+ ]*" // Telefon raqam formatini tekshirish uchun
-                      inputMode="numeric" // Mobil qurilmalarda raqamli klaviaturani ko'rsatish uchun
-                      required
-                    />
+                    <>
+                      <input
+                        type="tel"
+                        placeholder="+998 90 123 45 67"
+                        className={`p-3 border ${
+                          phoneError ? "border-red-500" : "border-gray-300"
+                        } rounded-lg w-full bg-[#002F6C] text-white placeholder-white`}
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)} // Telefon raqamni kuzatish
+                        required
+                      />
+                      {phoneError && (
+                        <p className="text-red-500 text-sm mt-1">
+                          {phoneError}
+                        </p>
+                      )}
+                    </>
                   ) : (
                     <input
                       type="text"
@@ -117,6 +150,36 @@ const ContactUs = () => {
             </form>
           </motion.div>
         </div>
+
+        {/* Muvaffaqiyat xabari */}
+        {successMessage && (
+          <motion.div
+            className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.5 }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+            <span>
+              Ma&apos;lumotlaringiz muvaffaqiyatli yuborildi! Masullarimiz siz
+              bilan tez orada bog&apos;lanishadi 😊
+            </span>
+          </motion.div>
+        )}
       </div>
     </section>
   );
