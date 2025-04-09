@@ -175,7 +175,7 @@ const ContactUs = () => {
               />
             </svg>
             <span>
-              Ma&apos;lumotlaringiz muvaffaqiyatli yuborildi! Masullarimiz siz
+              Ma&apos;lumotlaringiz muvaffaqiyatli yuborildi! Mas&apos;ullarimiz siz
               bilan tez orada bog&apos;lanishadi 😊
             </span>
           </motion.div>
