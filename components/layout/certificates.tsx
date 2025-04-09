@@ -122,7 +122,7 @@ const Certificates = () => {
               <div
                 key={certificate.id}
                 className="cursor-pointer p-2 border-0 rounded-lg transition-transform duration-300 border-gray-300"
-                style={{ width: "220px", height: "305px" }}
+                style={{ width: "280px", height: "405px" }}
               >
                 <img
                   src={certificate.image}

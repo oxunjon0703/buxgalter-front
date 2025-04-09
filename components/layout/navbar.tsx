@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <header>
       {/* Top header with contact info and social links */}
-      <div className="bg-[#002F6C] py-2 text-white text-sm">
+      <div className="bg-[#002F6C] py-2 text-white text-sm hidden sm:block">
         <div className="container mx-auto px-10 flex flex-col sm:flex-row justify-between items-center">
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-10">
             <div className="flex items-center gap-2">
@@ -53,13 +53,13 @@ const Navbar = () => {
               <Facebook size={18} />
             </Link>
             <Link
-              href="https://instagram.com"
+              href="https://www.instagram.com/balansor_uz"
               className="text-[#E4405F] hover:text-[#c13545] transition-colors"
             >
               <Instagram size={18} />
             </Link>
             <Link
-              href="https://t.me"
+              href="https://t.me/balansoruz"
               className="text-[#0088CC] hover:text-[#006699] transition-colors"
             >
               <Send size={18} />
