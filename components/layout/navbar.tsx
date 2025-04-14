@@ -4,10 +4,34 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Mail, Phone, MapPin, Facebook, Instagram, Send } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Mobil menyuni boshqarish
   const [isSticky, setIsSticky] = useState(false); // Skrollni kuzatish uchun holat
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState("UZ");
+
+  useEffect(() => {
+    // Brauzerda ishlaganda `window.location.pathname` ni o'qish
+    const path = window.location.pathname;
+    const match = path.match(/\/(uz|en|ru)/);
+    if (match) {
+      setSelectedLanguage(match[1].toUpperCase());
+    }
+  }, []);
+
+  const handleLanguageChange = (language: string) => {
+    setSelectedLanguage(language); // Holatni yangilash
+    setIsDropdownOpen(false); // Dropdownni yopish
+
+    // URL manzilini yangilash
+    const currentPath = window.location.pathname; // Hozirgi sahifa yo'li
+    const newPath = currentPath.replace(/\/(uz|en|ru)/, `/${language}`); // Tilni almashtirish
+    if (currentPath !== newPath) {
+      window.location.href = newPath; // Yangi URLga o'tish
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +49,7 @@ const Navbar = () => {
     };
   }, []);
 
+  const t = useTranslations("Navbar"); // I18n uchun tarjimalar
   return (
     <header>
       {/* Top header with contact info and social links */}
@@ -41,7 +66,7 @@ const Navbar = () => {
             </div>
             <div className="flex items-center gap-2">
               <MapPin size={16} />
-              <span>Parkent ko&apos;chasi, 76</span>
+              <span>{t("address")}</span>
             </div>
           </div>
 
@@ -95,38 +120,41 @@ const Navbar = () => {
                   href="/#home"
                   className="font-medium text-[#000000] hover:text-primary transition-colors"
                 >
-                  Bosh sahifa
+                  {t("link1")}
                 </Link>
                 <Link
                   href="/#about"
                   className="font-medium text-[#000000] hover:text-primary transition-colors"
                 >
-                  Biz haqimizda
+                  {t("link2")}
                 </Link>
                 <Link
                   href="/service"
                   className="font-medium text-[#000000] hover:text-primary transition-colors"
                 >
-                  Xizmatlar
+                  {t("link3")}
                 </Link>
                 <Link
                   href="/team"
                   className="font-medium text-[#000000] hover:text-primary transition-colors"
                 >
-                  Jamoa
+                  {t("link4")}
                 </Link>
                 <Link
                   href="/#contact"
                   className="font-medium text-[#000000] hover:text-primary transition-colors"
                 >
-                  Bog&apos;lanish
+                  {t("link5")}
                 </Link>
               </div>
               <div className="flex items-center gap-4">
                 {/* Language Switcher */}
                 <div className="relative">
-                  <button className="flex items-center gap-2 px-4 py-2 bg-[#002F6C] text-[#FFFFF] rounded-md hover:bg-[#0951B0]">
-                    <span>UZ</span>
+                  <button
+                    className="flex items-center gap-2 px-4 py-2 bg-[#002F6C] text-white rounded-md hover:bg-[#0951B0]"
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  >
+                    <span>{selectedLanguage}</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -142,6 +170,28 @@ const Navbar = () => {
                       />
                     </svg>
                   </button>
+                  {isDropdownOpen && (
+                    <div className="absolute right-0 mt-2 w-19.5 bg-[#002F6C] border border-[#002F6C] rounded-md shadow-lg z-50">
+                      <button
+                        className="block w-full px-4 py-2 text-left text-sm text-white hover:bg-[#0951B0]"
+                        onClick={() => handleLanguageChange("uz")}
+                      >
+                        UZ
+                      </button>
+                      <button
+                        className="block w-full px-4 py-2 text-left text-sm text-white hover:bg-[#0951B0]"
+                        onClick={() => handleLanguageChange("en")}
+                      >
+                        EN
+                      </button>
+                      <button
+                        className="block w-full px-4 py-2 text-left text-sm text-white hover:bg-[#0951B0]"
+                        onClick={() => handleLanguageChange("ru")}
+                      >
+                        RU
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -177,31 +227,31 @@ const Navbar = () => {
                 href="#home"
                 className="block py-2 font-medium text-[#000000] hover:text-primary transition-colors"
               >
-                Bosh sahifa
+                {t("link1")}
               </Link>
               <Link
                 href="#about"
                 className="block py-2 font-medium text-[#000000] hover:text-primary transition-colors"
               >
-                Biz haqimizda
+                {t("link2")}
               </Link>
               <Link
                 href="/service"
                 className="block py-2 font-medium text-[#000000] hover:text-primary transition-colors"
               >
-                Xizmatlar
+                {t("link3")}
               </Link>
               <Link
                 href="/team"
                 className="block py-2 font-medium text-[#000000] hover:text-primary transition-colors"
               >
-                Jamoalar
+                {t("link4")}
               </Link>
               <Link
                 href="#contact"
                 className="block py-2 font-medium text-[#000000] hover:text-primary transition-colors"
               >
-                Bog&apos;lanish
+                {t("link5")}
               </Link>
             </div>
           </div>

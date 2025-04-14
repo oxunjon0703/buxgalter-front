@@ -1,0 +1,24 @@
+{
+  "HomePage": {
+    "title": "Hisob-kitoblaringizni oson va samarali boshqaring",
+    "about": "Moliyaviy jarayonlaringizni soddalashtiring. Bizning zamonaviy buxgalteriya yechimlarimiz bilan xarajatlarni kuzating, hisobotlar yarating va qonunchilik talablariga rioya qiling!",
+    "link1": "Biz haqimizda",
+    "link2": "Bog'lanish"
+  },
+  "Footer": {
+    "title": "Foydali havolalar",
+    "link1": "Bosh sahifa",
+    "link2": "Biz haqimizda",
+    "link3": "Xizmatlar",
+    "link4": "Jamoa",
+    "link5": "Bog'lanish"
+  },
+  "Navbar": {
+    "address": "Parkent ko'chasi, 76",
+    "link1": "Bosh sahifa",
+    "link2": "Biz haqimizda",
+    "link3": "Xizmatlar",
+    "link4": "Jamoa",
+    "link5": "Bog'lanish"
+  }
+}

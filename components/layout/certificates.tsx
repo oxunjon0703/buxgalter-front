@@ -80,17 +80,30 @@ const Certificates = () => {
         </h2>
 
         {/* Mobil versiya */}
-        <div className="md:hidden text-center">
+        <div className="md:hidden text-center relative">
           <h3 className="text-xl font-bold text-gray-800">
             {certificates[currentIndex].name}
           </h3>
           <p
-            className="text-gray-600 mt-3"
+            className="text-gray-600 mt-3 mx-auto"
             style={{ width: "360px", height: "160px" }}
           >
             {certificates[currentIndex].description}
           </p>
-          <div className="mt-5 flex justify-center">
+          <div className="mt-5 flex justify-center items-center relative">
+            {/* Oldingi rasmga o'tish tugmasi */}
+            <button
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full w-10 h-10 flex items-center justify-center shadow-md"
+              onClick={() =>
+                setCurrentIndex(
+                  (prevIndex) =>
+                    (prevIndex - 1 + certificates.length) % certificates.length
+                )
+              }
+            >
+              &#8249; {/* Chap o'q belgisi */}
+            </button>
+
             <div className="w-60 h-83 border rounded-lg overflow-hidden">
               <img
                 src={certificates[currentIndex].image}
@@ -98,9 +111,21 @@ const Certificates = () => {
                 className="object-cover w-full h-full"
               />
             </div>
+
+            {/* Keyingi rasmga o'tish tugmasi */}
+            <button
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-full w-10 h-10 flex items-center justify-center shadow-md"
+              onClick={() =>
+                setCurrentIndex(
+                  (prevIndex) => (prevIndex + 1) % certificates.length
+                )
+              }
+            >
+              &#8250; {/* O'ng o'q belgisi */}
+            </button>
           </div>
         </div>
-
+        
         {/* Katta ekranlar uchun versiya */}
         <div className="hidden md:flex flex-col md:flex-row items-center gap-10">
           {/* Chap tomonda titul va tavsif */}
@@ -117,8 +142,8 @@ const Certificates = () => {
           </div>
 
           {/* O'ng tomonda sertifikatlar */}
-          <div className="flex-1 flex justify-center md:justify-end gap-8">
-            {visibleCertificates.map((certificate, index) => (
+          <div className="flex-1 flex justify-left md:justify-end gap-15 px-10">
+            {visibleCertificates.slice(0, 2).map((certificate, index) => (
               <div
                 key={certificate.id}
                 className="cursor-pointer p-2 border-0 rounded-lg transition-transform duration-300 border-gray-300"

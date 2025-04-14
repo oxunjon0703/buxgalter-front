@@ -2,8 +2,10 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Instagram, Send } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const Footer = () => {
+  const t = useTranslations("Footer");
   return (
     <footer className="bg-[#002F6C] text-white">
       <div className="container mx-auto px-4 py-8">
@@ -16,14 +18,14 @@ const Footer = () => {
 
             {/* Navigation links */}
             <div className="text-center sm:text-left">
-              <h3 className="text-xl font-bold mb-4">Foydali havolalar</h3>
+              <h3 className="text-xl font-bold mb-4">{t("title")}</h3>
               <ul className="grid grid-cols-2 gap-2 justify-center sm:justify-start">
               <li>
                 <Link
                 href="/#home"
                 className="hover:text-blue-200 transition-colors"
                 >
-                Bosh sahifa
+                {t("link1")}
                 </Link>
               </li>
               <li>
@@ -31,7 +33,7 @@ const Footer = () => {
                 href="/#about"
                 className="hover:text-blue-200 transition-colors"
                 >
-                Biz haqimizda
+                {t("link2")}
                 </Link>
               </li>
               <li>
@@ -39,7 +41,7 @@ const Footer = () => {
                 href="/service"
                 className="hover:text-blue-200 transition-colors"
                 >
-                Xizmatlar
+                {t("link3")}
                 </Link>
               </li>
               <li>
@@ -47,7 +49,7 @@ const Footer = () => {
                 href="/team"
                 className="hover:text-blue-200 transition-colors"
                 >
-                Jamoa
+                {t("link4")}
                 </Link>
               </li>
               <li>
@@ -55,32 +57,32 @@ const Footer = () => {
                 href="/#contact"
                 className="hover:text-blue-200 transition-colors"
                 >
-                Bog&apos;lanish
+                {t("link5")}
                 </Link>
               </li>
               </ul>
 
               {/* Social links */}
-              <div className="flex gap-5 mt-4 justify-center sm:justify-start">
-              <Link
+                <div className="flex gap-5 mt-4 justify-center sm:justify-start sm:hidden">
+                <Link
                 href="https://facebook.com"
                 className="text-[#1877F2] hover:text-[#145dbf] transition-colors"
-              >
+                >
                 <Facebook size={18} />
-              </Link>
-              <Link
+                </Link>
+                <Link
                 href="https://www.instagram.com/balansor_uz"
                 className="text-[#E4405F] hover:text-[#c13545] transition-colors"
-              >
+                >
                 <Instagram size={18} />
-              </Link>
-              <Link
+                </Link>
+                <Link
                 href="https://t.me/balansoruz"
                 className="text-[#0088CC] hover:text-[#006699] transition-colors"
-              >
+                >
                 <Send size={18} />
-              </Link>
-              </div>
+                </Link>
+                </div>
             </div>
 
 {/* Map */}

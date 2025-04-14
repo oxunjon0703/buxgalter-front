@@ -1,0 +1,24 @@
+{
+  "HomePage": {
+    "title": "Manage your accounts easily and efficiently",
+    "about": "Simplify your financial processes. Track expenses, generate reports, and comply with legal requirements with our modern accounting solutions!",
+    "link1": "About Us",
+    "link2": "Contacts"
+  },
+  "Footer": {
+    "title": "Useful links",
+    "link1": "Home",
+    "link2": "About Us",
+    "link3": "Services",
+    "link4": "Team",
+    "link5": "Contacts"
+  },
+  "Navbar": {
+    "address": "Parkent street, 76",
+    "link1": "Home",
+    "link2": "About Us",
+    "link3": "Services",
+    "link4": "Team",
+    "link5": "Contacts"
+  }
+}
