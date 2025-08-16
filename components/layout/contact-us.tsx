@@ -74,7 +74,7 @@ const ContactUs = () => {
               >
               <input
                 type="text"
-                placeholder="+ 998 99 185 37 03"
+                placeholder="+ 998 91 004 3030"
                 className="p-3 border border-gray-300 rounded-lg w-full md:w-[450px] bg-[#002F6C] text-white placeholder-white"
                 required
               />
@@ -86,7 +86,7 @@ const ContactUs = () => {
               />
               <input
                 type="text"
-                placeholder="Parkent ko’chasi, 76"
+                placeholder="Aviasozlar shaharchasi, 1-mavze, 125A"
                 className="p-3 border border-gray-300 rounded-lg w-full md:w-[450px] bg-[#002F6C] text-white placeholder-white"
                 required
               />

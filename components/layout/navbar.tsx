@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Mail, Phone, MapPin, Facebook, Instagram, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, Send, TimerReset } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
@@ -58,7 +58,7 @@ const Navbar = () => {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-10">
             <div className="flex items-center gap-2">
               <Phone size={16} />
-              <span>+998 99 185 3703</span>
+              <span>+998 91 004 3030</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail size={16} />
@@ -67,6 +67,10 @@ const Navbar = () => {
             <div className="flex items-center gap-2">
               <MapPin size={16} />
               <span>{t("address")}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <TimerReset size={16} />
+              <span>TEST REJIMDA</span>
             </div>
           </div>
 

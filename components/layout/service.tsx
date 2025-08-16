@@ -22,29 +22,19 @@ interface Tariff {
 const services: Service[] = [
   {
     id: 1,
-    title: "Audit",
-    image: "/audit.png",
-    description: `✅ Moliya va buxgalteriya hisobotlarini to‘liq tekshirish
-✅ Soliq va huquqiy xatolarni aniqlash
-✅ Moliyaviy faoliyat tahlili va tavsiyalar
-✅ Ichki nazorat tizimini baholash va takomillashtirish
-✅ Hisobotlarni tayyorlash va taqdim etish`,
-  },
-  {
-    id: 2,
     title: "Buxgalteriya hisobini yuritish",
     image: "/buxgalter.png",
     description: `✅ Buxgalteriya hisobotlarini yuritish
-✅ Moliyaviy hisobotlarni tayyorlash
-✅ Soliq hisobotlarini taqdim etish
-✅ Harajatlar va daromadlarni nazorat qilish`,
+  ✅ Moliyaviy hisobotlarni tayyorlash
+  ✅ Soliq hisobotlarini taqdim etish
+  ✅ Harajatlar va daromadlarni nazorat qilish`,
     tariffs: [
       {
         title: "Asosiy",
         desc: "Kichik biznes va tadbirkorlar uchun mo‘ljallangan asosiy buxgalterlik xizmati. Moliyaviy hisob-kitoblarni yuritish, boshlang‘ich hujjatlarni tayyorlash va hisobotlarni topshirishda yordam beramiz. Oddiy va ishonchli yechim!",
         tarif_info: `✅ Asosiy buxgalterlik xizmatlari
-✅ Hisobotlarni tayyorlash va topshirish
-✅ Soliq hisob-kitoblari bo‘yicha maslahat`,
+  ✅ Hisobotlarni tayyorlash va topshirish
+  ✅ Soliq hisob-kitoblari bo‘yicha maslahat`,
         price: "4 000 000 oyiga",
         color: "#007BFF",
       },
@@ -84,6 +74,16 @@ const services: Service[] = [
     ],
   },
   {
+    id: 2,
+    title: "Audit",
+    image: "/audit.png",
+    description: `✅ Moliya va buxgalteriya hisobotlarini to‘liq tekshirish
+✅ Soliq va huquqiy xatolarni aniqlash
+✅ Moliyaviy faoliyat tahlili va tavsiyalar
+✅ Ichki nazorat tizimini baholash va takomillashtirish
+✅ Hisobotlarni tayyorlash va taqdim etish`,
+  },
+  {
     id: 3,
     title: "Kadrlar hisobi",
     image: "/kadr.png",
@@ -98,20 +98,6 @@ const services: Service[] = [
     description: `✅ Soliq qonunchiligiga rioya qilish bo'yicha maslahat
 ✅ Soliq hisobotlarini tayyorlash va taqdim etish
 ✅ Soliq yukini optimallashtirish`,
-  },
-  {
-    id: 5,
-    title: "Deklarant",
-    image: "/Deklarant.png",
-    description: `✅ Tashqi savdo operatsiyalarini hujjatlashtirish
-✅ Bojxona deklaratsiyalarini tayyorlash
-✅ Bojxona qonunchiligiga rioya qilish`,
-  },
-  {
-    id: 6,
-    title: "Boshqalar",
-    image: "/boshqalar.png",
-    description: `✅ Boshqa xizmatlar bo'yicha batafsil ma'lumot uchun biz bilan bog'laning.`,
   },
 ];
 
@@ -166,7 +152,7 @@ const Services = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: selectedService.id * 0.1 }}
           >
-            {selectedService.id !== 2 && (
+            {selectedService.id !== 1 && (
               <div className="flex flex-col md:flex-row items-center justify-center gap-6 sm:gap-15">
                 <div className="flex-shrink-0">
                   <img
@@ -186,7 +172,7 @@ const Services = () => {
               </div>
             )}
 
-            {selectedService.id === 2 && (
+            {selectedService.id === 1 && (
               <div className="mt-4">
                 <h4 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 sm:mb-10 text-center">
                   Buxgalteriya xizmat tariflari

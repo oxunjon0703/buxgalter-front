@@ -89,7 +89,7 @@ const Footer = () => {
 <div>
   <div className="w-full sm:w-fit bg-blue-700 rounded-md overflow-hidden">
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.735410961824!2d69.32483161186941!3d41.314619271189585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef50242899e11%3A0xcd10a843b03e2033!2z0YPQu9C40YbQsCDQn9Cw0YDQutC10L3RgtGB0LrQsNGPIDc2LCAxMDAxMjQsINCi0LDRiNC60LXQvdGCLCBUYXNoa2VudCwg0KPQt9Cx0LXQutC40YHRgtCw0L0!5e0!3m2!1sru!2s!4v1743153690440!5m2!1sru!2s"
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1059.969529976963!2d69.35536310383883!3d41.28609091225325!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef58b0b3c23a7%3A0x145559d09b7489e0!2zNzlQNCtISjksINGD0LvQuNGG0LAg0JDQstC40LDRgdC-0LfQu9Cw0YAgNzgsIDEwMDIwNCwg0KLQsNGI0LrQtdC90YIsIFRhc2hrZW50LCDQo9C30LHQtdC60LjRgdGC0LDQvQ!5e0!3m2!1sru!2sus!4v1755337628261!5m2!1sru!2sus"
       className="w-full h-[200px] sm:w-[430px] sm:h-[170px]"
       style={{ border: 0 }}
       allowFullScreen
