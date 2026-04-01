@@ -13,7 +13,7 @@ const Footer = () => {
           {/* Company info */}
           <div className="flex items-center space-x-4 pl-10">
             <Image src="/footer.png" alt="Buxgalter" width={200} height={200} />
-            <h3 className="text-2xl font-bold text-[#D65A00]">Balansor</h3>
+            <h3 className="text-2xl font-bold text-[#D65A00]">Hisobchi</h3>
           </div>
 
             {/* Navigation links */}

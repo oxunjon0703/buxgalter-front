@@ -74,19 +74,19 @@ const ContactUs = () => {
               >
               <input
                 type="text"
-                placeholder="+ 998 91 004 3030"
+                placeholder="+ 998 77 33 2777"
                 className="p-3 border border-gray-300 rounded-lg w-full md:w-[450px] bg-[#002F6C] text-white placeholder-white"
                 required
               />
               <input
                 type="email"
-                placeholder="balansoruz@gmail.com"
+                placeholder="hisobchiuz@gmail.com"
                 className="p-3 border border-gray-300 rounded-lg w-full md:w-[450px] bg-[#002F6C] text-white placeholder-white"
                 required
               />
               <input
                 type="text"
-                placeholder="Aviasozlar shaharchasi, 1-mavze, 125A"
+                placeholder="Motrid shaharchasi, 1-mavze, 125A"
                 className="p-3 border border-gray-300 rounded-lg w-full md:w-[450px] bg-[#002F6C] text-white placeholder-white"
                 required
               />

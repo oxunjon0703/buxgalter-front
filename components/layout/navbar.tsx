@@ -58,11 +58,11 @@ const Navbar = () => {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-10">
             <div className="flex items-center gap-2">
               <Phone size={16} />
-              <span>+998 91 004 3030</span>
+              <span>+998 77 033 2777</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail size={16} />
-              <span>balansoruz@gmail.com</span>
+              <span>hisobchi@gmail.com</span>
             </div>
             <div className="flex items-center gap-2">
               <MapPin size={16} />
@@ -82,13 +82,13 @@ const Navbar = () => {
               <Facebook size={18} />
             </Link>
             <Link
-              href="https://www.instagram.com/balansor_uz"
+              href="https://www.instagram.com/hisobchi_uz"
               className="text-[#E4405F] hover:text-[#c13545] transition-colors"
             >
               <Instagram size={18} />
             </Link>
             <Link
-              href="https://t.me/balansoruz"
+              href="https://t.me/hisobchiuz"
               className="text-[#0088CC] hover:text-[#006699] transition-colors"
             >
               <Send size={18} />
