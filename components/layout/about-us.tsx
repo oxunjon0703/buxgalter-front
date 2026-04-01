@@ -36,7 +36,7 @@ const AboutUs = () => {
             <div className="md:w-1/2 grid grid-cols-2 gap-4">
               <div className="overflow-hidden rounded-lg shadow-lg h-140 col-span-2 mt-4">
                 <Image
-                  src="/main.jpg"
+                  src="/aaa.avif"
                   alt="Smart farming technology"
                   width={800}
                   height={300}
